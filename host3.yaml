@@ -1,0 +1,42 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+version: '2'
+
+volumes:
+  orderer3.deldot.com:
+  peer2.org1.deldot.com:
+
+networks:
+  byfn:
+    external:
+      name: first-network
+
+services:
+
+  orderer3.deldot.com:
+    extends:
+      file: base/peer-base.yaml
+      service: orderer-base
+    environment:
+      - ORDERER_GENERAL_LISTENPORT=9050
+    container_name: orderer3.deldot.com
+    networks:
+    - byfn
+    volumes:
+        - ./channel-artifacts/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
+        - ./crypto-config/ordererOrganizations/deldot.com/orderers/orderer3.deldot.com/msp:/var/hyperledger/orderer/msp
+        - ./crypto-config/ordererOrganizations/deldot.com/orderers/orderer3.deldot.com/tls/:/var/hyperledger/orderer/tls
+        - orderer3.deldot.com:/var/hyperledger/production/orderer
+    ports:
+    - 9050:9050
+
+  peer2.org1.deldot.com:
+    container_name: peer2.org1.example.com
+    extends:
+      file:  base/docker-compose-base.yaml
+      service: peer2.org1.example.com
+    networks:
+      - byfn
