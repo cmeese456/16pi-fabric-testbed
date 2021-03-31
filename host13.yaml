@@ -1,0 +1,37 @@
+version: '2'
+
+volumes:
+  orderer13.deldot.com:
+  peer12.org1.deldot.com:
+
+networks:
+  byfn:
+    external:
+      name: first-network
+
+services:
+
+  orderer13.deldot.com:
+    extends:
+      file: base/peer-base.yaml
+      service: orderer-base
+    environment:
+      - ORDERER_GENERAL_LISTENPORT=19050
+    container_name: orderer13.deldot.com
+    networks:
+    - byfn
+    volumes:
+        - ./channel-artifacts/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
+        - ./crypto-config/ordererOrganizations/deldot.com/orderers/orderer13.deldot.com/msp:/var/hyperledger/orderer/msp
+        - ./crypto-config/ordererOrganizations/deldot.com/orderers/orderer13.deldot.com/tls/:/var/hyperledger/orderer/tls
+        - orderer13.deldot.com:/var/hyperledger/production/orderer
+    ports:
+    - 19050:19050
+
+  peer12.org1.deldot.com:
+    container_name: peer12.org1.deldot.com
+    extends:
+      file:  base/docker-compose-base.yaml
+      service: peer12.org1.deldot.com
+    networks:
+      - byfn
