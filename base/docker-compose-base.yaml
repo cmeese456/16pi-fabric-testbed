@@ -119,7 +119,7 @@ services:
     ports:
       - 10051:10051
 
-peer4.org1.deldot.com:
+  peer4.org1.deldot.com:
     container_name: peer4.org1.deldot.com
     extends:
       file: peer-base.yaml
@@ -144,7 +144,7 @@ peer4.org1.deldot.com:
     ports:
       - 11051:11051
 
-peer5.org1.deldot.com:
+  peer5.org1.deldot.com:
     container_name: peer5.org1.deldot.com
     extends:
       file: peer-base.yaml
@@ -169,7 +169,7 @@ peer5.org1.deldot.com:
     ports:
       - 12051:12051
 
-peer6.org1.deldot.com:
+  peer6.org1.deldot.com:
     container_name: peer6.org1.deldot.com
     extends:
       file: peer-base.yaml
@@ -194,7 +194,7 @@ peer6.org1.deldot.com:
     ports:
       - 13051:13051
 
-peer7.org1.deldot.com:
+  peer7.org1.deldot.com:
     container_name: peer7.org1.deldot.com
     extends:
       file: peer-base.yaml
@@ -219,7 +219,7 @@ peer7.org1.deldot.com:
     ports:
       - 14051:14051
 
-peer8.org1.deldot.com:
+  peer8.org1.deldot.com:
     container_name: peer8.org1.deldot.com
     extends:
       file: peer-base.yaml
@@ -244,7 +244,7 @@ peer8.org1.deldot.com:
     ports:
       - 15051:15051
 
-peer9.org1.deldot.com:
+  peer9.org1.deldot.com:
     container_name: peer9.org1.deldot.com
     extends:
       file: peer-base.yaml
@@ -269,7 +269,7 @@ peer9.org1.deldot.com:
     ports:
       - 16051:16051
 
-peer10.org1.deldot.com:
+  peer10.org1.deldot.com:
     container_name: peer10.org1.deldot.com
     extends:
       file: peer-base.yaml
@@ -294,7 +294,7 @@ peer10.org1.deldot.com:
     ports:
       - 17051:17051
 
-peer11.org1.deldot.com:
+  peer11.org1.deldot.com:
     container_name: peer11.org1.deldot.com
     extends:
       file: peer-base.yaml
@@ -320,7 +320,7 @@ peer11.org1.deldot.com:
       - 18051:18051
 
 
-peer12.org1.deldot.com:
+  peer12.org1.deldot.com:
     container_name: peer12.org1.deldot.com
     extends:
       file: peer-base.yaml
@@ -345,7 +345,7 @@ peer12.org1.deldot.com:
     ports:
       - 19051:19051
 
-peer13.org1.deldot.com:
+  peer13.org1.deldot.com:
     container_name: peer13.org1.deldot.com
     extends:
       file: peer-base.yaml
@@ -370,7 +370,7 @@ peer13.org1.deldot.com:
     ports:
       - 20051:20051
 
-peer14.org1.deldot.com:
+  peer14.org1.deldot.com:
     container_name: peer14.org1.deldot.com
     extends:
       file: peer-base.yaml
@@ -395,7 +395,7 @@ peer14.org1.deldot.com:
     ports:
       - 21051:21051
 
-peer15.org1.deldot.com:
+  peer15.org1.deldot.com:
     container_name: peer15.org1.deldot.com
     extends:
       file: peer-base.yaml
