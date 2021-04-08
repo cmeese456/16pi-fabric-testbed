@@ -145,7 +145,6 @@ Application: &ApplicationDefaults
     # Organizations is the list of orgs which are defined as participants on
     # the application side of the network
     Organizations:
-      - *Org1
 
     # Policies defines the set of policies at this level of the config tree
     # For Application policies, their canonical path is
